@@ -47,4 +47,11 @@ oa2
 
 x[x>oa2] ### extraer datos mayores del vector x
 
-###Lectura de datos (formato.csv)
+###Lectura de datos (formato.csv)##########################################
+#Lectura de datos, formato .csv
+datos<-read.csv("C:/Users/SALA-G28/Desktop/practica/PIB (1).csv",header=TRUE)
+PIB<-(datos[,2]) ## datos columna 2
+PIB
+length(PIB)
+summary(PIB)
+
