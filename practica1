@@ -1,0 +1,50 @@
+x<-c(22.2,40.4,16.4,73.7,36.6,149.9,30.0,4.4,33.1,66.7,81.5,16.4)
+##### media (datos no agrupados)###
+mean(x) 
+
+####mediana###
+median(x)
+
+#####moda #####
+library(modeest)
+mfv(x)
+
+####desviación estandar
+###### entre mas grande es la varianza mas separados estan los datos
+sd(x)
+
+###quantiles
+
+quantile(x)
+##q3-q1
+IQR(x)
+
+min(x)
+max(x)
+##análisis gráfico
+hist(x,freq=FALSE,main="x",xlab="Millones de pesos",ylab="frecuencias",col="pink")
+##histograma para 30 datos o más ## cuando la mediana es mayor a la media los datos son sesgados a la derecha
+
+length(x)
+
+## gráfica linea
+plot(x,type="l")
+
+## gráfica dispersión
+plot(x)
+
+##diagrama de caja # cuando los datos que nos son normales
+##linea de abajo negra(1° cuantil)
+#linea arriba( 3° cuantil)
+boxplot(x, col="blue")### datos menores de 30
+
+
+##observaciones atipicas
+oa1<-quantile(x,.25)-1.5*IQR(x)
+oa1
+oa2<-quantile(x,.75)+1.5*IQR(x)
+oa2
+
+x[x>oa2] ### extraer datos mayores del vector x
+
+###Lectura de datos (formato.csv)
